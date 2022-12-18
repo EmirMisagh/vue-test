@@ -25,24 +25,31 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-5 pt-5">
-            <div class="col-2 bg-info">
-                gsf
+       
+        <div class="main__divtopsongs ">
+            <div class="songs ">
+                dfsg
             </div>
-            <div class="col-2 bg-danger">
-                
+            <div class="songs ">
+                dfsg
             </div>
-            <div class="col-2 bg-info">
-                gsf
+            <div class="songs ">
+                dfsg
             </div>
-            <div class="col-2 bg-danger">
-
+            <div class="songs ">
+                dfsg
             </div>
-            <div class="col-2 bg-info">
-                gsf
+            <div class="songs ">
+                dfsg
             </div>
-            <div class="col-2 bg-danger">
-
+            <div class="songs ">
+                dfsg
+            </div>
+            <div class="songs ">
+                dfsg
+            </div>
+            <div class="songs ">
+                dfsg
             </div>
         </div>
     </div>
@@ -50,6 +57,7 @@
 
 <script>
 import im from '../assets/img.jpg';
+import axios from 'axios'
 
 export default {
     props: ['head','text'],
@@ -57,15 +65,21 @@ export default {
         return{
             modal: 'my ',
             bool: false,
+            info: null,
             array: ['head','hgbhdsf']
     }
     },
     methods: {
         change(){
             this.bool = !this.bool
-        }
-        
-    }
+        },
+    },
+    mounted () {
+    axios
+      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .then(response => (this.info = response))
+      console.log(this.info)
+  }
 }
 </script>
 

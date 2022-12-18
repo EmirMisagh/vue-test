@@ -6,7 +6,7 @@
             </div>
             <div class="col-6 col-md-6 c2">
                 <input type="text" placeholder="search">
-                <button>Search</button>
+                <button>search</button>
             </div>
             <div class="col-0 col-md-3 c3">
                 <router-link to="/"><button class="btn ">Log In</button></router-link>
@@ -43,6 +43,11 @@
 </template>
 
 <script>
+import { OhVueIcon, addIcons } from 'oh-vue-icons'
+import { LaSearchSolid } from "oh-vue-icons/icons";
+
+addIcons(LaSearchSolid)
+
 window.onscroll = function(){
     if(window.pageYOffset > 55){
         const nav = document.querySelector('.navic__bottom');
